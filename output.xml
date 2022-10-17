@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.0 on win32)" generated="20220726 22:32:06.354" rpa="false" schemaversion="3">
+<suite id="s1" name="ValidateJsonResponse" source="C:\Users\GorantlL\PycharmProjects\TestingRobotWithAPI\TestCase\ValidateJsonResponse.robot">
+<test id="s1-t1" name="Quick Get Request Test" line="10">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer 7232803c821bc49a0bd5c56d7df39c5289168e323fb17c5b6b1597d8941e33ef</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220726 22:32:06.789" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer 7232803c821bc49a0bd5c56d7df39c5289168e323fb17c5b6b1597d8941e33ef'}</msg>
+<status status="PASS" starttime="20220726 22:32:06.787" endtime="20220726 22:32:06.789"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mySession</arg>
+<arg>${base_Url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220726 22:32:06.792" level="INFO">Creating Session using : alias=mySession, url=https://gorest.co.in, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer 7232803c821bc49a0bd5c56d7df39c5289168e323fb17c5b6b1597d8941e33ef'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220726 22:32:06.790" endtime="20220726 22:32:06.794"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mySession</arg>
+<arg>/public/v2/users</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20220726 22:32:06.795" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20220726 22:32:07.066" level="INFO">GET Request : url=https://gorest.co.in/public/v2/users 
+ path_url=/public/v2/users 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer 7232803c821bc49a0bd5c56d7df39c5289168e323fb17c5b6b1597d8941e33ef'} 
+ body=None 
+ </msg>
+<msg timestamp="20220726 22:32:07.066" level="INFO">GET Response : url=https://gorest.co.in/public/v2/users 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 26 Jul 2022 17:02:07 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding, Origin', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '0', 'X-Content-Type-Options': 'nosniff', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'X-RateLimit-Limit': '90', 'X-RateLimit-Remaining': '89', 'X-RateLimit-Reset': '1', 'X-Pagination-Total': '2710', 'X-Pagination-Pages': '271', 'X-Pagination-Page': '1', 'X-Pagination-Limit': '10', 'X-Links-Previous': '', 'X-Links-Current': 'https://gorest.co.in/public/v2/users?page=1', 'X-Links-Next': 'https://gorest.co.in/public/v2/users?page=2', 'ETag': 'W/"0b80b8878ed121833c6663abbde92463"', 'Cache-Control': 'max-age=0, private, must-revalidate', 'X-Request-Id': '26e2676c-e593-4d9e-9d05-15a63707d036', 'X-Runtime': '0.021764', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=pH1KX%2BUFvh91jl6YxCK89BSJckwsSjemhBaW1mapv7Brn9Uezif6cTZPYxthuY31qyyDTrQb4QKoX%2FUyrDIfRebUlTEzdLhhOzQ3nSbOfWArLLwq6s18%2BWWpa%2BpFLbs%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '730eb37e1ee43c06-BLR', 'Content-Encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body=[{"id":2798,"name":"Dhaanyalakshmi Trivedi","email":"trivedi_dhaanyalakshmi@bartoletti-beahan.name","gender":"female","status":"inactive"},{"id":2797,"name":"Jagdish Chattopadhyay","email":"jagdish_chattopadhyay@zulauf.biz","gender":"female","status":"active"},{"id":2796,"name":"Gov. Devesh Ahluwalia","email":"gov_ahluwalia_devesh@hackett-quigley.co","gender":"male","status":"active"},{"id":2794,"name":"Siddhi Mishra","email":"mishra_siddhi@quitzon.net","gender":"male","status":"inactive"},{"id":2792,"name":"Ramesh Deshpande VM","email":"ramesh_deshpande_vm@beier.io","gender":"female","status":"inactive"},{"id":2791,"name":"The Hon. Bhagirathi Kakkar","email":"hon_bhagirathi_the_kakkar@sanford.co","gender":"male","status":"inactive"},{"id":2790,"name":"Gov. Arya Abbott","email":"gov_arya_abbott@price-tremblay.name","gender":"female","status":"active"},{"id":2789,"name":"Bheeshma Embranthiri","email":"embranthiri_bheeshma@schumm.org","gender":"male","status":"inactive"},{"id":2788,"name":"Kin Patel","email":"kin_patel@stiedemann-heller.io","gender":"female","status":"active"},{"id":2787,"name":"Dhanesh Prajapat I","email":"prajapat_i_dhanesh@stark-stiedemann.io","gender":"female","status":"active"}] 
+ </msg>
+<msg timestamp="20220726 22:32:07.066" level="INFO">c:\users\gorantll\appdata\local\programs\python\python38-32\lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gorest.co.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220726 22:32:07.067" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220726 22:32:06.795" endtime="20220726 22:32:07.067"/>
+</kw>
+<kw name="To Json" library="RequestsLibrary">
+<var>${json_object}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<msg timestamp="20220726 22:32:07.068" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg timestamp="20220726 22:32:07.071" level="INFO">To JSON using : content=[{"id":2798,"name":"Dhaanyalakshmi Trivedi","email":"trivedi_dhaanyalakshmi@bartoletti-beahan.name","gender":"female","status":"inactive"},{"id":2797,"name":"Jagdish Chattopadhyay","email":"jagdish_chattopadhyay@zulauf.biz","gender":"female","status":"active"},{"id":2796,"name":"Gov. Devesh Ahluwalia","email":"gov_ahluwalia_devesh@hackett-quigley.co","gender":"male","status":"active"},{"id":2794,"name":"Siddhi Mishra","email":"mishra_siddhi@quitzon.net","gender":"male","status":"inactive"},{"id":2792,"name":"Ramesh Deshpande VM","email":"ramesh_deshpande_vm@beier.io","gender":"female","status":"inactive"},{"id":2791,"name":"The Hon. Bhagirathi Kakkar","email":"hon_bhagirathi_the_kakkar@sanford.co","gender":"male","status":"inactive"},{"id":2790,"name":"Gov. Arya Abbott","email":"gov_arya_abbott@price-tremblay.name","gender":"female","status":"active"},{"id":2789,"name":"Bheeshma Embranthiri","email":"embranthiri_bheeshma@schumm.org","gender":"male","status":"inactive"},{"id":2788,"name":"Kin Patel","email":"kin_patel@stiedemann-heller.io","gender":"female","status":"active"},{"id":2787,"name":"Dhanesh Prajapat I","email":"prajapat_i_dhanesh@stark-stiedemann.io","gender":"female","status":"active"}] </msg>
+<msg timestamp="20220726 22:32:07.071" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20220726 22:32:07.071" level="INFO">${json_object} = [{'id': 2798, 'name': 'Dhaanyalakshmi Trivedi', 'email': 'trivedi_dhaanyalakshmi@bartoletti-beahan.name', 'gender': 'female', 'status': 'inactive'}, {'id': 2797, 'name': 'Jagdish Chattopadhyay', 'emai...</msg>
+<status status="PASS" starttime="20220726 22:32:07.068" endtime="20220726 22:32:07.071"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${id}</var>
+<arg>${json_object}</arg>
+<arg>$.[1].id</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220726 22:32:07.128" level="INFO">${id} = [2797]</msg>
+<status status="PASS" starttime="20220726 22:32:07.073" endtime="20220726 22:32:07.128"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${id}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220726 22:32:07.129" endtime="20220726 22:32:07.129"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${id}</arg>
+<arg>2797</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20220726 22:32:07.131" level="INFO">Argument types are:
+&lt;class 'list'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20220726 22:32:07.132" level="FAIL">[2797] != 2797</msg>
+<status status="FAIL" starttime="20220726 22:32:07.130" endtime="20220726 22:32:07.132"/>
+</kw>
+<status status="FAIL" starttime="20220726 22:32:06.784" endtime="20220726 22:32:07.134">[2797] != 2797</status>
+</test>
+<status status="FAIL" starttime="20220726 22:32:06.364" endtime="20220726 22:32:07.136"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="ValidateJsonResponse">ValidateJsonResponse</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220726 22:32:06.795" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20220726 22:32:07.068" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+</errors>
+</robot>
